@@ -889,11 +889,22 @@
         </div>
     </footer>
 
+    <!-- Lightbox -->
+    <div id="lightbox" class="lightbox">
+        <div class="lightbox-close" id="lightbox-close"></div>
+        <div class="lightbox-nav prev" id="lightbox-prev"></div>
+        <div class="lightbox-nav next" id="lightbox-next"></div>
+        <div class="lightbox-content">
+            <img id="lightbox-img" src="" alt="">
+        </div>
+        <div class="lightbox-counter" id="lightbox-counter">1 / 1</div>
+    </div>
+
     <!-- AOS Animation Library -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     
-    <!-- Cu
-
+    <!-- Custom JavaScript -->
+    <script>
         // Testimonial Carousel
         let currentTestimonial = 0;
         const carousel = document.querySelector('.testimonial-carousel');
@@ -1108,15 +1119,5 @@
         });
     </script>
 
-    <!-- Lightbox -->
-    <div id="lightbox" class="lightbox">
-        <div class="lightbox-close" id="lightbox-close"></div>
-        <div class="lightbox-nav prev" id="lightbox-prev"></div>
-        <div class="lightbox-nav next" id="lightbox-next"></div>
-        <div class="lightbox-content">
-            <img id="lightbox-img" src="" alt="">
-        </div>
-        <div class="lightbox-counter" id="lightbox-counter">1 / 1</div>
-    </div>
 </body>
 </html>
