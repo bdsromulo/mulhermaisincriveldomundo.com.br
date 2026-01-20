@@ -1,0 +1,931 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A Mulher Mais Incrível do Mundo</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+    
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <style>
+        :root {
+            --cream: #FAF7F2;
+            --dark-cream: #F5EFE7;
+            --gold: #C9A877;
+            --lavender: #E8D5E8;
+            --dark-text: #2C2C2C;
+            --light-text: #6B6B6B;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--dark-text);
+            background-color: var(--cream);
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Playfair Display', serif;
+        }
+        
+        .hero-title {
+            font-size: clamp(2.5rem, 8vw, 6rem);
+            line-height: 1.1;
+        }
+        
+        .hero-name {
+            font-size: clamp(2rem, 6vw, 5rem);
+            line-height: 1.2;
+            text-wrap: balance;
+            max-width: 90%;
+            margin: 0 auto;
+        }
+        
+        .section-title {
+            font-size: clamp(2rem, 5vw, 3.5rem);
+        }
+        
+        .gradient-text {
+            background: linear-gradient(135deg, var(--gold) 0%, var(--lavender) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .card-hover {
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .card-hover:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(201, 168, 119, 0.15);
+        }
+        
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: linear-gradient(to bottom, var(--gold), var(--lavender));
+        }
+        
+        .timeline-dot {
+            width: 16px;
+            height: 16px;
+            background: var(--gold);
+            border: 3px solid var(--cream);
+            border-radius: 50%;
+            position: absolute;
+            left: -7px;
+            top: 8px;
+            z-index: 1;
+        }
+        
+        .letter-section {
+            background: linear-gradient(135deg, rgba(248, 243, 238, 0.5) 0%, rgba(232, 213, 232, 0.2) 100%);
+            backdrop-filter: blur(10px);
+        }
+        
+        .photo-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+        
+        .photo-item {
+            aspect-ratio: 1;
+            background: var(--dark-cream);
+            border-radius: 8px;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .photo-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .photo-item:hover img {
+            transform: scale(1.05);
+        }
+        
+        .counter-box {
+            background: linear-gradient(135deg, #ffffff 0%, var(--dark-cream) 100%);
+            border: 1px solid rgba(201, 168, 119, 0.2);
+        }
+        
+        @media (max-width: 640px) {
+            .photo-grid {
+                grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+                gap: 0.75rem;
+            }
+        }
+    </style>
+</head>
+<body class="antialiased">
+    
+    <!-- Hero Section -->
+    <section class="min-h-screen flex items-center justify-center px-6 py-20 relative overflow-hidden">
+        <div class="absolute inset-0 opacity-5">
+            <svg class="w-full h-full" viewBox="0 0 100 100" preserveAspectRatio="none">
+                <defs>
+                    <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" style="stop-color:rgb(201,168,119);stop-opacity:1" />
+                        <stop offset="100%" style="stop-color:rgb(232,213,232);stop-opacity:1" />
+                    </linearGradient>
+                </defs>
+                <circle cx="20" cy="30" r="30" fill="url(#grad1)" />
+                <circle cx="80" cy="70" r="40" fill="url(#grad1)" />
+            </svg>
+        </div>
+        
+        <div class="max-w-5xl mx-auto text-center relative z-10">
+            <div data-aos="fade-up" data-aos-duration="1000">
+                <p class="text-base md:text-lg tracking-[0.3em] uppercase mb-6" style="color: var(--light-text);">
+                    Uma celebração a
+                </p>
+                <h1 class="hero-name font-bold mb-6 gradient-text">
+                    Rafaela Pereira<br>França Leite
+                </h1>
+                <div class="flex flex-wrap justify-center gap-3 md:gap-4 mb-8 max-w-4xl mx-auto">
+                    <span class="px-4 py-2 rounded-full text-sm md:text-base" style="background-color: rgba(201, 168, 119, 0.15); color: var(--gold); font-weight: 500;">Bonita</span>
+                    <span class="px-4 py-2 rounded-full text-sm md:text-base" style="background-color: rgba(232, 213, 232, 0.2); color: var(--gold); font-weight: 500;">Inteligente</span>
+                    <span class="px-4 py-2 rounded-full text-sm md:text-base" style="background-color: rgba(201, 168, 119, 0.15); color: var(--gold); font-weight: 500;">Simpática</span>
+                    <span class="px-4 py-2 rounded-full text-sm md:text-base" style="background-color: rgba(232, 213, 232, 0.2); color: var(--gold); font-weight: 500;">Engraçada</span>
+                    <span class="px-4 py-2 rounded-full text-sm md:text-base" style="background-color: rgba(201, 168, 119, 0.15); color: var(--gold); font-weight: 500;">Honesta</span>
+                    <span class="px-4 py-2 rounded-full text-sm md:text-base" style="background-color: rgba(232, 213, 232, 0.2); color: var(--gold); font-weight: 500;">Altruísta</span>
+                    <span class="px-4 py-2 rounded-full text-sm md:text-base" style="background-color: rgba(201, 168, 119, 0.15); color: var(--gold); font-weight: 500;">Sensata</span>
+                    <span class="px-4 py-2 rounded-full text-sm md:text-base" style="background-color: rgba(232, 213, 232, 0.2); color: var(--gold); font-weight: 500; border: 2px solid var(--gold);">Incrível</span>
+                </div>
+                <p class="text-xl md:text-3xl font-light mb-12 max-w-3xl mx-auto" style="font-family: 'Playfair Display', serif; color: var(--light-text);">
+                    A mulher que transforma o ordinário em extraordinário<br>
+                    <span class="text-base md:text-xl">com sua presença iluminada</span>
+                </p>
+            </div>
+            
+            <div data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000">
+                <div class="inline-block">
+                    <i data-lucide="chevron-down" class="w-8 h-8 animate-bounce" style="color: var(--gold);"></i>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Life Counter Section -->
+    <section class="py-20 px-6" data-aos="fade-up">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="section-title text-center mb-4 font-bold" style="color: var(--dark-text);">
+                Embelezando o Mundo
+            </h2>
+            <p class="text-center text-lg mb-12" style="color: var(--light-text);">
+                Há exatamente...
+            </p>
+            
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 max-w-4xl mx-auto">
+                <div class="counter-box rounded-2xl p-6 md:p-8 text-center card-hover" data-aos="zoom-in" data-aos-delay="100">
+                    <div class="text-4xl md:text-5xl font-bold mb-2" style="color: var(--gold); font-family: 'Playfair Display', serif;">
+                        <span id="years">0</span>
+                    </div>
+                    <div class="text-sm md:text-base uppercase tracking-wider" style="color: var(--light-text);">Anos</div>
+                </div>
+                
+                <div class="counter-box rounded-2xl p-6 md:p-8 text-center card-hover" data-aos="zoom-in" data-aos-delay="200">
+                    <div class="text-4xl md:text-5xl font-bold mb-2" style="color: var(--gold); font-family: 'Playfair Display', serif;">
+                        <span id="days">0</span>
+                    </div>
+                    <div class="text-sm md:text-base uppercase tracking-wider" style="color: var(--light-text);">Dias</div>
+                </div>
+                
+                <div class="counter-box rounded-2xl p-6 md:p-8 text-center card-hover" data-aos="zoom-in" data-aos-delay="300">
+                    <div class="text-4xl md:text-5xl font-bold mb-2" style="color: var(--gold); font-family: 'Playfair Display', serif;">
+                        <span id="hours">0</span>
+                    </div>
+                    <div class="text-sm md:text-base uppercase tracking-wider" style="color: var(--light-text);">Horas</div>
+                </div>
+                
+                <div class="counter-box rounded-2xl p-6 md:p-8 text-center card-hover" data-aos="zoom-in" data-aos-delay="400">
+                    <div class="text-4xl md:text-5xl font-bold mb-2" style="color: var(--gold); font-family: 'Playfair Display', serif;">
+                        <span id="minutes">0</span>
+                    </div>
+                    <div class="text-sm md:text-base uppercase tracking-wider" style="color: var(--light-text);">Minutos</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Timeline Section -->
+    <section class="py-24 px-6" style="background-color: var(--dark-cream);">
+        <div class="max-w-4xl mx-auto">
+            <h2 class="section-title text-center mb-4 font-bold" data-aos="fade-up">
+                Marcos de uma História Extraordinária
+            </h2>
+            <p class="text-center text-lg mb-20" style="color: var(--light-text);" data-aos="fade-up" data-aos-delay="100">
+                Momentos que moldaram a mulher incrível que você é
+            </p>
+            
+            <div class="space-y-16 relative pl-12 md:pl-16">
+                <!-- 
+                ============================================
+                ⏰ LINHA DO TEMPO - MARCOS IMPORTANTES
+                ============================================
+                
+                INSTRUÇÕES:
+                - Substitua [Data] pela data real (ex: "24 de Janeiro de 2001")
+                - Substitua [Ano] pelo ano (ex: "2023")
+                - Personalize os títulos e descrições
+                - Adicione ou remova itens conforme necessário
+                - Ícones disponíveis: heart, graduation-cap, briefcase, plane, star, award, home, users, etc.
+                -->
+                
+                <!-- Timeline Item 1 -->
+                <div class="timeline-item relative" data-aos="fade-left" data-aos-delay="100">
+                    <div class="timeline-dot"></div>
+                    <div class="bg-white rounded-2xl p-8 md:p-10 card-hover">
+                        <div class="flex items-start gap-4 mb-4">
+                            <div class="p-3 rounded-full" style="background-color: var(--dark-cream);">
+                                <i data-lucide="heart" class="w-6 h-6" style="color: var(--gold);"></i>
+                            </div>
+                            <div>
+                                <p class="text-sm uppercase tracking-wider mb-1" style="color: var(--gold); font-weight: 500;">
+                                    24 de Janeiro de 2001
+                                </p>
+                                <h3 class="text-2xl md:text-3xl font-bold mb-3" style="font-family: 'Playfair Display', serif;">
+                                    O Início de Tudo
+                                </h3>
+                            </div>
+                        </div>
+                        <p class="text-base md:text-lg leading-relaxed" style="color: var(--light-text);">
+                            O dia em que o mundo ganhou mais luz, mais beleza, mais propósito. 
+                            O universo conspirou para criar algo extraordinário, e você nasceu.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Timeline Item 2 - PERSONALIZE AQUI -->
+                <div class="timeline-item relative" data-aos="fade-left" data-aos-delay="200">
+                    <div class="timeline-dot"></div>
+                    <div class="bg-white rounded-2xl p-8 md:p-10 card-hover">
+                        <div class="flex items-start gap-4 mb-4">
+                            <div class="p-3 rounded-full" style="background-color: var(--dark-cream);">
+                                <i data-lucide="graduation-cap" class="w-6 h-6" style="color: var(--gold);"></i>
+                            </div>
+                            <div>
+                                <p class="text-sm uppercase tracking-wider mb-1" style="color: var(--gold); font-weight: 500;">
+                                    [Ano da Conquista]
+                                </p>
+                                <h3 class="text-2xl md:text-3xl font-bold mb-3" style="font-family: 'Playfair Display', serif;">
+                                    Conquista Acadêmica
+                                </h3>
+                            </div>
+                        </div>
+                        <p class="text-base md:text-lg leading-relaxed" style="color: var(--light-text);">
+                            Com determinação e brilhantismo, você alcançou um marco importante na sua jornada. 
+                            Sua dedicação e inteligência sempre foram inspiradoras.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Timeline Item 3 - PERSONALIZE AQUI -->
+                <div class="timeline-item relative" data-aos="fade-left" data-aos-delay="300">
+                    <div class="timeline-dot"></div>
+                    <div class="bg-white rounded-2xl p-8 md:p-10 card-hover">
+                        <div class="flex items-start gap-4 mb-4">
+                            <div class="p-3 rounded-full" style="background-color: var(--dark-cream);">
+                                <i data-lucide="briefcase" class="w-6 h-6" style="color: var(--gold);"></i>
+                            </div>
+                            <div>
+                                <p class="text-sm uppercase tracking-wider mb-1" style="color: var(--gold); font-weight: 500;">
+                                    [Ano Profissional]
+                                </p>
+                                <h3 class="text-2xl md:text-3xl font-bold mb-3" style="font-family: 'Playfair Display', serif;">
+                                    Realização Profissional
+                                </h3>
+                            </div>
+                        </div>
+                        <p class="text-base md:text-lg leading-relaxed" style="color: var(--light-text);">
+                            Sua carreira é um reflexo de sua paixão e competência. 
+                            Cada passo que você dá é marcado pela excelência e pela vontade de fazer a diferença.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Timeline Item 4 - PERSONALIZE AQUI -->
+                <div class="timeline-item relative" data-aos="fade-left" data-aos-delay="400">
+                    <div class="timeline-dot"></div>
+                    <div class="bg-white rounded-2xl p-8 md:p-10 card-hover">
+                        <div class="flex items-start gap-4 mb-4">
+                            <div class="p-3 rounded-full" style="background-color: var(--dark-cream);">
+                                <i data-lucide="plane" class="w-6 h-6" style="color: var(--gold);"></i>
+                            </div>
+                            <div>
+                                <p class="text-sm uppercase tracking-wider mb-1" style="color: var(--gold); font-weight: 500;">
+                                    [Ano da Viagem]
+                                </p>
+                                <h3 class="text-2xl md:text-3xl font-bold mb-3" style="font-family: 'Playfair Display', serif;">
+                                    Aventuras pelo Mundo
+                                </h3>
+                            </div>
+                        </div>
+                        <p class="text-base md:text-lg leading-relaxed" style="color: var(--light-text);">
+                            Seu espírito aventureiro te leva a explorar novos horizontes. 
+                            Cada viagem é uma história, cada destino carrega um pedaço do seu coração.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Essence Section -->
+    <section class="py-24 px-6">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="section-title text-center mb-4 font-bold" data-aos="fade-up">
+                A Essência de Quem Você É
+            </h2>
+            <p class="text-center text-lg mb-20" style="color: var(--light-text);" data-aos="fade-up" data-aos-delay="100">
+                Qualidades que fazem de você única e especial
+            </p>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Card 1 -->
+                <div class="bg-white rounded-2xl p-8 md:p-10 card-hover text-center" data-aos="fade-up" data-aos-delay="100">
+                    <div class="w-16 h-16 mx-auto mb-6 rounded-full flex items-center justify-center" style="background: linear-gradient(135deg, var(--gold) 0%, var(--lavender) 100%);">
+                        <i data-lucide="sparkles" class="w-8 h-8 text-white"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4" style="font-family: 'Playfair Display', serif;">
+                        A Inteligência que Inspira
+                    </h3>
+                    <p class="text-base leading-relaxed" style="color: var(--light-text);">
+                        Sua mente brilhante ilumina cada conversa, cada desafio. 
+                        Você transforma complexidade em clareza com graça e sabedoria.
+                    </p>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="bg-white rounded-2xl p-8 md:p-10 card-hover text-center" data-aos="fade-up" data-aos-delay="200">
+                    <div class="w-16 h-16 mx-auto mb-6 rounded-full flex items-center justify-center" style="background: linear-gradient(135deg, var(--lavender) 0%, var(--gold) 100%);">
+                        <i data-lucide="smile" class="w-8 h-8 text-white"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4" style="font-family: 'Playfair Display', serif;">
+                        O Sorriso que Ilumina
+                    </h3>
+                    <p class="text-base leading-relaxed" style="color: var(--light-text);">
+                        Seu sorriso tem o poder de transformar dias difíceis em momentos memoráveis. 
+                        É um farol de alegria que aquece todos ao seu redor.
+                    </p>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="bg-white rounded-2xl p-8 md:p-10 card-hover text-center" data-aos="fade-up" data-aos-delay="300">
+                    <div class="w-16 h-16 mx-auto mb-6 rounded-full flex items-center justify-center" style="background: linear-gradient(135deg, var(--gold) 0%, var(--lavender) 100%);">
+                        <i data-lucide="heart-handshake" class="w-8 h-8 text-white"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4" style="font-family: 'Playfair Display', serif;">
+                        A Empatia que Acolhe
+                    </h3>
+                    <p class="text-base leading-relaxed" style="color: var(--light-text);">
+                        Você possui a rara habilidade de entender e se conectar com as pessoas. 
+                        Seu coração generoso é um refúgio para quem precisa.
+                    </p>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="bg-white rounded-2xl p-8 md:p-10 card-hover text-center" data-aos="fade-up" data-aos-delay="100">
+                    <div class="w-16 h-16 mx-auto mb-6 rounded-full flex items-center justify-center" style="background: linear-gradient(135deg, var(--lavender) 0%, var(--gold) 100%);">
+                        <i data-lucide="trophy" class="w-8 h-8 text-white"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4" style="font-family: 'Playfair Display', serif;">
+                        A Determinação Inabalável
+                    </h3>
+                    <p class="text-base leading-relaxed" style="color: var(--light-text);">
+                        Quando você define um objetivo, nada pode te parar. 
+                        Sua força de vontade e resiliência são verdadeiramente admiráveis.
+                    </p>
+                </div>
+
+                <!-- Card 5 -->
+                <div class="bg-white rounded-2xl p-8 md:p-10 card-hover text-center" data-aos="fade-up" data-aos-delay="200">
+                    <div class="w-16 h-16 mx-auto mb-6 rounded-full flex items-center justify-center" style="background: linear-gradient(135deg, var(--gold) 0%, var(--lavender) 100%);">
+                        <i data-lucide="palette" class="w-8 h-8 text-white"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4" style="font-family: 'Playfair Display', serif;">
+                        A Criatividade que Encanta
+                    </h3>
+                    <p class="text-base leading-relaxed" style="color: var(--light-text);">
+                        Sua visão única do mundo traz cor e vida a tudo que você toca. 
+                        Você vê beleza onde outros veem o comum.
+                    </p>
+                </div>
+
+                <!-- Card 6 -->
+                <div class="bg-white rounded-2xl p-8 md:p-10 card-hover text-center" data-aos="fade-up" data-aos-delay="300">
+                    <div class="w-16 h-16 mx-auto mb-6 rounded-full flex items-center justify-center" style="background: linear-gradient(135deg, var(--lavender) 0%, var(--gold) 100%);">
+                        <i data-lucide="star" class="w-8 h-8 text-white"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4" style="font-family: 'Playfair Display', serif;">
+                        A Autenticidade que Cativa
+                    </h3>
+                    <p class="text-base leading-relaxed" style="color: var(--light-text);">
+                        Você é genuinamente você mesma, sem máscaras ou pretensões. 
+                        Essa autenticidade é magnética e inspiradora.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section class="py-24 px-6" style="background-color: var(--dark-cream);">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="section-title text-center mb-4 font-bold" data-aos="fade-up">
+                Galeria de Momentos
+            </h2>
+            <p class="text-center text-lg mb-16" style="color: var(--light-text);" data-aos="fade-up" data-aos-delay="100">
+                Instantâneos de uma vida extraordinária
+            </p>
+            
+            <div class="photo-grid">
+                <!-- 
+                ============================================
+                📸 GALERIA DE FOTOS DA RAFAELA
+                ============================================
+                
+                INSTRUÇÕES:
+                1. Coloque as fotos na pasta "assets" (crie se não existir)
+                2. Nomeie as fotos como: foto1.jpg, foto2.jpg, foto3.jpg, etc.
+                3. Tamanho recomendado: 800x800 pixels (formato quadrado)
+                4. Formatos aceitos: .jpg, .jpeg, .png, .webp
+                
+                Estrutura de pastas:
+                📂 site_pra_rafa/
+                   ├── index.html
+                   └── 📂 assets/
+                       ├── foto1.jpg
+                       ├── foto2.jpg
+                       ├── foto3.jpg
+                       └── ...
+                -->
+                
+                <!-- Foto 1 -->
+                <div class="photo-item" data-aos="zoom-in" data-aos-delay="100">
+                    <img src="assets/foto1.jpg" alt="Rafaela - Momento especial" onerror="this.src='https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=600&h=600&fit=crop'">
+                </div>
+                
+                <!-- Foto 2 -->
+                <div class="photo-item" data-aos="zoom-in" data-aos-delay="200">
+                    <img src="assets/foto2.jpg" alt="Rafaela - Sorriso radiante" onerror="this.src='https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=600&h=600&fit=crop'">
+                </div>
+                
+                <!-- Foto 3 -->
+                <div class="photo-item" data-aos="zoom-in" data-aos-delay="300">
+                    <img src="assets/foto3.jpg" alt="Rafaela - Momento inesquecível" onerror="this.src='https://images.unsplash.com/photo-1517841905240-472988babdf9?w=600&h=600&fit=crop'">
+                </div>
+                
+                <!-- Foto 4 -->
+                <div class="photo-item" data-aos="zoom-in" data-aos-delay="100">
+                    <img src="assets/foto4.jpg" alt="Rafaela - Alegria contagiante" onerror="this.src='https://images.unsplash.com/photo-1524504388940-b1c1722653e1?w=600&h=600&fit=crop'">
+                </div>
+                
+                <!-- Foto 5 -->
+                <div class="photo-item" data-aos="zoom-in" data-aos-delay="200">
+                    <img src="assets/foto5.jpg" alt="Rafaela - Beleza natural" onerror="this.src='https://images.unsplash.com/photo-1502685104226-ee32379fefbe?w=600&h=600&fit=crop'">
+                </div>
+                
+                <!-- Foto 6 -->
+                <div class="photo-item" data-aos="zoom-in" data-aos-delay="300">
+                    <img src="assets/foto6.jpg" alt="Rafaela - Energia positiva" onerror="this.src='https://images.unsplash.com/photo-1499952127939-9bbf5af6c51c?w=600&h=600&fit=crop'">
+                </div>
+                
+                <!-- Foto 7 -->
+                <div class="photo-item" data-aos="zoom-in" data-aos-delay="100">
+                    <img src="assets/foto7.jpg" alt="Rafaela - Momento único" onerror="this.src='https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=600&h=600&fit=crop'">
+                </div>
+                
+                <!-- Foto 8 -->
+                <div class="photo-item" data-aos="zoom-in" data-aos-delay="200">
+                    <img src="assets/foto8.jpg" alt="Rafaela - Felicidade" onerror="this.src='https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=600&h=600&fit=crop'">
+                </div>
+                
+                <!-- Foto 9 -->
+                <div class="photo-item" data-aos="zoom-in" data-aos-delay="300">
+                    <img src="assets/foto9.jpg" alt="Rafaela - Aventuras" onerror="this.src='https://images.unsplash.com/photo-1517841905240-472988babdf9?w=600&h=600&fit=crop'">
+                </div>
+                
+                <!-- Foto 10 -->
+                <div class="photo-item" data-aos="zoom-in" data-aos-delay="100">
+                    <img src="assets/foto10.jpg" alt="Rafaela - Espontaneidade" onerror="this.src='https://images.unsplash.com/photo-1524504388940-b1c1722653e1?w=600&h=600&fit=crop'">
+                </div>
+                
+                <!-- Foto 11 -->
+                <div class="photo-item" data-aos="zoom-in" data-aos-delay="200">
+                    <img src="assets/foto11.jpg" alt="Rafaela - Sorrisos" onerror="this.src='https://images.unsplash.com/photo-1502685104226-ee32379fefbe?w=600&h=600&fit=crop'">
+                </div>
+                
+                <!-- Foto 12 -->
+                <div class="photo-item" data-aos="zoom-in" data-aos-delay="300">
+                    <img src="assets/foto12.jpg" alt="Rafaela - Celebração" onerror="this.src='https://images.unsplash.com/photo-1499952127939-9bbf5af6c51c?w=600&h=600&fit=crop'">
+                </div>
+                
+                <!-- Foto 13 -->
+                <div class="photo-item" data-aos="zoom-in" data-aos-delay="100">
+                    <img src="assets/foto13.jpg" alt="Rafaela - Brilho" onerror="this.src='https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=600&h=600&fit=crop'">
+                </div>
+                
+                <!-- Foto 14 -->
+                <div class="photo-item" data-aos="zoom-in" data-aos-delay="200">
+                    <img src="assets/foto14.jpg" alt="Rafaela - Encanto" onerror="this.src='https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=600&h=600&fit=crop'">
+                </div>
+                
+                <!-- Foto 15 -->
+                <div class="photo-item" data-aos="zoom-in" data-aos-delay="300">
+                    <img src="assets/foto15.jpg" alt="Rafaela - Ternura" onerror="this.src='https://images.unsplash.com/photo-1517841905240-472988babdf9?w=600&h=600&fit=crop'">
+                </div>
+                
+                <!-- Foto 16 -->
+                <div class="photo-item" data-aos="zoom-in" data-aos-delay="100">
+                    <img src="assets/foto16.jpg" alt="Rafaela - Doçura" onerror="this.src='https://images.unsplash.com/photo-1524504388940-b1c1722653e1?w=600&h=600&fit=crop'">
+                </div>
+                
+                <!-- Foto 17 -->
+                <div class="photo-item" data-aos="zoom-in" data-aos-delay="200">
+                    <img src="assets/foto17.jpg" alt="Rafaela - Inspiração" onerror="this.src='https://images.unsplash.com/photo-1502685104226-ee32379fefbe?w=600&h=600&fit=crop'">
+                </div>
+                
+                <!-- Foto 18 -->
+                <div class="photo-item" data-aos="zoom-in" data-aos-delay="300">
+                    <img src="assets/foto18.jpg" alt="Rafaela - Incrível" onerror="this.src='https://images.unsplash.com/photo-1499952127939-9bbf5af6c51c?w=600&h=600&fit=crop'">
+                </div>
+                
+            </div>
+        </div>
+    </section>
+
+    <!-- Letter Section -->
+    <section class="py-24 px-6 letter-section">
+        <div class="max-w-3xl mx-auto">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <div class="inline-block p-4 rounded-full mb-6" style="background-color: rgba(201, 168, 119, 0.1);">
+                    <i data-lucide="mail" class="w-8 h-8" style="color: var(--gold);"></i>
+                </div>
+                <h2 class="section-title font-bold mb-4">
+                    Uma Carta Para Você
+                </h2>
+            </div>
+            
+            <div class="bg-white rounded-3xl p-10 md:p-16 shadow-xl" data-aos="fade-up" data-aos-delay="200">
+                <p class="text-lg md:text-xl leading-relaxed mb-6" style="color: var(--dark-text); font-family: 'Playfair Display', serif;">
+                    Querida Rafaela,
+                </p>
+                
+                <p class="text-base md:text-lg leading-relaxed mb-6" style="color: var(--light-text);">
+                    Este site é muito mais do que uma celebração do seu aniversário. É um tributo à pessoa incrível que você é, 
+                    às conquistas que você alcançou e ao impacto profundo que você tem na vida de todos ao seu redor.
+                </p>
+                
+                <p class="text-base md:text-lg leading-relaxed mb-6" style="color: var(--light-text);">
+                    Sua inteligência brilhante, seu coração generoso, sua determinação inabalável e sua autenticidade inspiradora 
+                    fazem de você alguém verdadeiramente especial. Você não apenas existe no mundo - você o transforma, 
+                    um sorriso, uma palavra, uma ação de cada vez.
+                </p>
+                
+                <p class="text-base md:text-lg leading-relaxed mb-6" style="color: var(--light-text);">
+                    Cada momento ao seu lado é um presente. Sua presença ilumina até os dias mais sombrios, 
+                    e sua essência única torna a vida mais bela e significativa. Você merece ser celebrada não apenas hoje, 
+                    mas todos os dias, por tudo que você é e por tudo que você representa.
+                </p>
+                
+                <p class="text-base md:text-lg leading-relaxed mb-8" style="color: var(--light-text);">
+                    Que este novo ano de vida seja repleto de realizações, alegrias, aventuras e momentos inesquecíveis. 
+                    Você merece tudo de mais maravilhoso que este mundo tem a oferecer.
+                </p>
+                
+                <p class="text-lg md:text-xl leading-relaxed text-right" style="color: var(--dark-text); font-family: 'Playfair Display', serif;">
+                    Com todo meu amor e admiração,<br>
+                    <span style="color: var(--gold);">[Seu Nome]</span>
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials/Messages Section -->
+    <section class="py-24 px-6">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <div class="inline-block p-4 rounded-full mb-6" style="background-color: rgba(201, 168, 119, 0.1);">
+                    <i data-lucide="heart" class="w-8 h-8" style="color: var(--gold);"></i>
+                </div>
+                <h2 class="section-title font-bold mb-4">
+                    Palavras do Coração
+                </h2>
+                <p class="text-lg" style="color: var(--light-text);">
+                    Mensagens especiais de pessoas que te admiram
+                </p>
+            </div>
+            
+            <!-- Testimonial Carousel -->
+            <div class="relative max-w-4xl mx-auto">
+                <!-- Carousel Container -->
+                <div class="overflow-hidden">
+                    <div class="testimonial-carousel flex transition-transform duration-500 ease-out">
+                        
+                        <!-- ============================================ -->
+                        <!-- 📝 ADICIONE SEUS DEPOIMENTOS AQUI           -->
+                        <!-- ============================================ -->
+                        <!-- 
+                        INSTRUÇÕES:
+                        1. Copie todo o bloco "Testimonial Item" abaixo
+                        2. Cole quantas vezes precisar (um para cada depoimento)
+                        3. Substitua:
+                           - A URL da foto da pessoa
+                           - O nome da pessoa
+                           - O relacionamento (ex: "Melhor Amiga", "Mãe", "Colega de Trabalho")
+                           - O texto do depoimento
+                        -->
+                        
+                        <!-- Testimonial Item 1 -->
+                        <div class="testimonial-item min-w-full px-4">
+                            <div class="bg-white rounded-3xl p-8 md:p-12 shadow-xl" data-aos="fade-up">
+                                <div class="flex flex-col md:flex-row items-center gap-8 mb-8">
+                                    <!-- Foto da pessoa que está dando o depoimento -->
+                                    <div class="w-24 h-24 md:w-32 md:h-32 rounded-full overflow-hidden flex-shrink-0 border-4 border-opacity-20" style="border-color: var(--gold);">
+                                        <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=200&h=200&fit=crop" 
+                                             alt="Foto do autor" 
+                                             class="w-full h-full object-cover">
+                                    </div>
+                                    <div class="text-center md:text-left">
+                                        <h3 class="text-2xl font-bold mb-2" style="font-family: 'Playfair Display', serif; color: var(--dark-text);">
+                                            Maria Silva
+                                        </h3>
+                                        <p class="text-sm uppercase tracking-wider" style="color: var(--gold); font-weight: 500;">
+                                            Melhor Amiga
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="relative">
+                                    <i data-lucide="quote" class="w-12 h-12 absolute -top-4 -left-2 opacity-10" style="color: var(--gold);"></i>
+                                    <p class="text-base md:text-lg leading-relaxed relative z-10" style="color: var(--light-text);">
+                                        Rafa é uma das pessoas mais incríveis que já conheci. Sua energia contagiante e seu coração generoso 
+                                        transformam qualquer ambiente. Ela tem o dom de fazer todos ao seu redor se sentirem especiais e amados. 
+                                        Sou grata por ter você na minha vida!
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Testimonial Item 2 -->
+                        <div class="testimonial-item min-w-full px-4">
+                            <div class="bg-white rounded-3xl p-8 md:p-12 shadow-xl" data-aos="fade-up">
+                                <div class="flex flex-col md:flex-row items-center gap-8 mb-8">
+                                    <div class="w-24 h-24 md:w-32 md:h-32 rounded-full overflow-hidden flex-shrink-0 border-4 border-opacity-20" style="border-color: var(--gold);">
+                                        <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=200&h=200&fit=crop" 
+                                             alt="Foto do autor" 
+                                             class="w-full h-full object-cover">
+                                    </div>
+                                    <div class="text-center md:text-left">
+                                        <h3 class="text-2xl font-bold mb-2" style="font-family: 'Playfair Display', serif; color: var(--dark-text);">
+                                            João Santos
+                                        </h3>
+                                        <p class="text-sm uppercase tracking-wider" style="color: var(--gold); font-weight: 500;">
+                                            Colega de Trabalho
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="relative">
+                                    <i data-lucide="quote" class="w-12 h-12 absolute -top-4 -left-2 opacity-10" style="color: var(--gold);"></i>
+                                    <p class="text-base md:text-lg leading-relaxed relative z-10" style="color: var(--light-text);">
+                                        Trabalhar com a Rafaela é uma experiência única. Sua inteligência, criatividade e profissionalismo 
+                                        inspiram todos nós. Além de ser uma profissional excepcional, ela é uma pessoa genuína e sempre 
+                                        disposta a ajudar. Uma verdadeira líder!
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Testimonial Item 3 -->
+                        <div class="testimonial-item min-w-full px-4">
+                            <div class="bg-white rounded-3xl p-8 md:p-12 shadow-xl" data-aos="fade-up">
+                                <div class="flex flex-col md:flex-row items-center gap-8 mb-8">
+                                    <div class="w-24 h-24 md:w-32 md:h-32 rounded-full overflow-hidden flex-shrink-0 border-4 border-opacity-20" style="border-color: var(--gold);">
+                                        <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=200&h=200&fit=crop" 
+                                             alt="Foto do autor" 
+                                             class="w-full h-full object-cover">
+                                    </div>
+                                    <div class="text-center md:text-left">
+                                        <h3 class="text-2xl font-bold mb-2" style="font-family: 'Playfair Display', serif; color: var(--dark-text);">
+                                            Ana Paula
+                                        </h3>
+                                        <p class="text-sm uppercase tracking-wider" style="color: var(--gold); font-weight: 500;">
+                                            Irmã
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="relative">
+                                    <i data-lucide="quote" class="w-12 h-12 absolute -top-4 -left-2 opacity-10" style="color: var(--gold);"></i>
+                                    <p class="text-base md:text-lg leading-relaxed relative z-10" style="color: var(--light-text);">
+                                        Minha irmã é minha inspiração diária. Desde pequenas sempre foi a pessoa mais determinada e 
+                                        carinhosa que conheço. Sua força e bondade me ensinam a ser uma pessoa melhor todos os dias. 
+                                        Te amo mais que tudo, maninha!
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 
+                        ADICIONE MAIS DEPOIMENTOS COPIANDO A ESTRUTURA ACIMA
+                        Dica: Mantenha entre 3-6 depoimentos para melhor experiência
+                        -->
+
+                    </div>
+                </div>
+                
+                <!-- Navigation Arrows -->
+                <button class="carousel-prev absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 md:-translate-x-12 w-12 h-12 rounded-full flex items-center justify-center transition-all hover:scale-110" style="background-color: var(--gold); box-shadow: 0 4px 12px rgba(201, 168, 119, 0.3);">
+                    <i data-lucide="chevron-left" class="w-6 h-6 text-white"></i>
+                </button>
+                <button class="carousel-next absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 md:translate-x-12 w-12 h-12 rounded-full flex items-center justify-center transition-all hover:scale-110" style="background-color: var(--gold); box-shadow: 0 4px 12px rgba(201, 168, 119, 0.3);">
+                    <i data-lucide="chevron-right" class="w-6 h-6 text-white"></i>
+                </button>
+                
+                <!-- Dots Navigation -->
+                <div class="flex justify-center gap-2 mt-8">
+                    <button class="carousel-dot w-3 h-3 rounded-full transition-all" style="background-color: var(--gold);" data-index="0"></button>
+                    <button class="carousel-dot w-3 h-3 rounded-full transition-all opacity-30" style="background-color: var(--gold);" data-index="1"></button>
+                    <button class="carousel-dot w-3 h-3 rounded-full transition-all opacity-30" style="background-color: var(--gold);" data-index="2"></button>
+                    <!-- Adicione mais dots se tiver mais depoimentos -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-12 px-6 text-center" style="background-color: var(--dark-cream);">
+        <div class="max-w-4xl mx-auto">
+            <div class="mb-6">
+                <i data-lucide="heart" class="w-8 h-8 mx-auto animate-pulse" style="color: var(--gold);"></i>
+            </div>
+            <p class="text-base mb-2" style="color: var(--light-text);">
+                Feliz Aniversário, Mulher Mais Incrível do Mundo
+            </p>
+            <p class="text-sm" style="color: var(--light-text);">
+                mulhermaisincriveldomundo.com.br • 2026
+            </p>
+        </div>
+    </footer>
+
+    <!-- AOS Animation Library -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    
+    <!-- Cu
+
+        // Testimonial Carousel
+        let currentTestimonial = 0;
+        const carousel = document.querySelector('.testimonial-carousel');
+        const items = document.querySelectorAll('.testimonial-item');
+        const dots = document.querySelectorAll('.carousel-dot');
+        const prevBtn = document.querySelector('.carousel-prev');
+        const nextBtn = document.querySelector('.carousel-next');
+
+        function updateCarousel() {
+            carousel.style.transform = `translateX(-${currentTestimonial * 100}%)`;
+            
+            // Update dots
+            dots.forEach((dot, index) => {
+                if (index === currentTestimonial) {
+                    dot.style.opacity = '1';
+                    dot.style.transform = 'scale(1.2)';
+                } else {
+                    dot.style.opacity = '0.3';
+                    dot.style.transform = 'scale(1)';
+                }
+            });
+            
+            // Update Lucide icons
+            lucide.createIcons();
+        }
+
+        function nextTestimonial() {
+            currentTestimonial = (currentTestimonial + 1) % items.length;
+            updateCarousel();
+        }
+
+        function prevTestimonial() {
+            currentTestimonial = (currentTestimonial - 1 + items.length) % items.length;
+            updateCarousel();
+        }
+
+        // Event listeners
+        if (nextBtn) nextBtn.addEventListener('click', nextTestimonial);
+        if (prevBtn) prevBtn.addEventListener('click', prevTestimonial);
+
+        dots.forEach((dot, index) => {
+            dot.addEventListener('click', () => {
+                currentTestimonial = index;
+                updateCarousel();
+            });
+        });
+
+        // Auto-advance carousel every 7 seconds
+        setInterval(nextTestimonial, 7000);stom JavaScript -->
+    <script>
+        // Initialize AOS
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out',
+            once: true,
+            offset: 100
+        });
+
+        // Initialize Lucide Icons
+        lucide.createIcons();
+
+        // Life Counter - CONFIGURE A DATA DE NASCIMENTO AQUI
+        function updateLifeCounter() {
+            // IMPORTANTE: Altere esta data para a data de nascimento dela
+            const birthDate = new Date('2001-01-24'); // Formato: YYYY-MM-DD (24/01/2001)
+            const now = new Date();
+            
+            // Calculate difference
+            const diff = now - birthDate;
+            
+            // Calculate years, days, hours, minutes
+            const years = Math.floor(diff / (1000 * 60 * 60 * 24 * 365.25));
+            const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+            const hours = Math.floor(diff / (1000 * 60 * 60));
+            const minutes = Math.floor(diff / (1000 * 60));
+            
+            // Update display with animation
+            animateValue('years', 0, years, 2000);
+            animateValue('days', 0, days, 2000);
+            animateValue('hours', 0, hours, 2000);
+            animateValue('minutes', 0, minutes, 2000);
+            
+            // Update minutes every minute
+            setInterval(() => {
+                const currentMinutes = Math.floor((new Date() - birthDate) / (1000 * 60));
+                document.getElementById('minutes').textContent = currentMinutes.toLocaleString('pt-BR');
+            }, 60000);
+        }
+
+        // Animate number counting
+        function animateValue(id, start, end, duration) {
+            const element = document.getElementById(id);
+            const range = end - start;
+            const increment = range / (duration / 16); // 60fps
+            let current = start;
+            
+            const timer = setInterval(() => {
+                current += increment;
+                if (current >= end) {
+                    current = end;
+                    clearInterval(timer);
+                }
+                element.textContent = Math.floor(current).toLocaleString('pt-BR');
+            }, 16);
+        }
+
+        // Initialize counter when page loads
+        window.addEventListener('load', () => {
+            updateLifeCounter();
+        });
+
+        // Smooth scroll for any anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Add parallax effect to hero section
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const hero = document.querySelector('section');
+            if (hero && scrolled < window.innerHeight) {
+                hero.style.transform = `translateY(${scrolled * 0.5}px)`;
+                hero.style.opacity = 1 - (scrolled / window.innerHeight) * 0.5;
+            }
+        });
+    </script>
+</body>
+</html>
