@@ -157,15 +157,20 @@
             max-width: 90%;
             max-height: 90vh;
             animation: zoomIn 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
         
         .lightbox-content img {
+            display: block;
             max-width: 100%;
             max-height: 90vh;
             width: auto;
             height: auto;
             border-radius: 8px;
             box-shadow: 0 0 50px rgba(201, 168, 119, 0.5);
+            object-fit: contain;
         }
         
         .lightbox-close {
@@ -822,6 +827,26 @@
                         <div class="photo-carousel-item min-w-full flex items-center justify-center p-4">
                             <img src="assets/foto30.jpeg" alt="Rafaela - Extraordinária" class="max-h-[600px] w-auto rounded-2xl shadow-2xl cursor-pointer hover:scale-105 transition-transform duration-300">
                         </div>
+                        
+                        <!-- Foto 31 -->
+                        <div class="photo-carousel-item min-w-full flex items-center justify-center p-4">
+                            <img src="assets/foto31.png" alt="Rafaela - Memorável" class="max-h-[600px] w-auto rounded-2xl shadow-2xl cursor-pointer hover:scale-105 transition-transform duration-300">
+                        </div>
+                        
+                        <!-- Foto 32 -->
+                        <div class="photo-carousel-item min-w-full flex items-center justify-center p-4">
+                            <img src="assets/foto32.jpeg" alt="Rafaela - Fascinante" class="max-h-[600px] w-auto rounded-2xl shadow-2xl cursor-pointer hover:scale-105 transition-transform duration-300">
+                        </div>
+                        
+                        <!-- Foto 33 -->
+                        <div class="photo-carousel-item min-w-full flex items-center justify-center p-4">
+                            <img src="assets/foto33.jpeg" alt="Rafaela - Brilhante" class="max-h-[600px] w-auto rounded-2xl shadow-2xl cursor-pointer hover:scale-105 transition-transform duration-300">
+                        </div>
+                        
+                        <!-- Foto 34 -->
+                        <div class="photo-carousel-item min-w-full flex items-center justify-center p-4">
+                            <img src="assets/foto34.png" alt="Rafaela - Espetacular" class="max-h-[600px] w-auto rounded-2xl shadow-2xl cursor-pointer hover:scale-105 transition-transform duration-300">
+                        </div>
                     </div>
                 </div>
 
@@ -836,7 +861,7 @@
                 <!-- Contador de Fotos -->
                 <div class="text-center mt-6">
                     <p class="text-lg font-semibold" style="color: var(--light-text);">
-                        <span id="photo-counter">1</span> / 30
+                        <span id="photo-counter">1</span> / 34
                     </p>
                 </div>
             </div>
