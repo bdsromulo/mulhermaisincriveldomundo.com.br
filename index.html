@@ -655,177 +655,190 @@
             <h2 class="section-title text-center mb-4 font-bold" data-aos="fade-up">
                 Galeria de Momentos
             </h2>
-            <p class="text-center text-lg mb-16" style="color: var(--light-text);" data-aos="fade-up" data-aos-delay="100">
+            <p class="text-center text-lg mb-8" style="color: var(--light-text);" data-aos="fade-up" data-aos-delay="100">
                 Instantâneos de uma vida extraordinária
             </p>
             
-            <div class="photo-grid">
-                <!-- 
-                ============================================
-                📸 GALERIA DE FOTOS DA RAFAELA
-                ============================================
-                
-                INSTRUÇÕES:
-                1. Coloque as fotos na pasta "assets" (crie se não existir)
-                2. Nomeie as fotos como: foto1.jpg, foto2.jpg, foto3.jpg, etc.
-                3. Tamanho recomendado: 800x800 pixels (formato quadrado)
-                4. Formatos aceitos: .jpg, .jpeg, .png, .webp
-                
-                Estrutura de pastas:
-                📂 site_pra_rafa/
-                   ├── index.html
-                   └── 📂 assets/
-                       ├── foto1.jpg
-                       ├── foto2.jpg
-                       ├── foto3.jpg
-                       └── ...
-                -->
-                
-                <!-- Foto 1 -->
-                <div class="photo-item" data-aos="zoom-in" data-aos-delay="100">
-                    <img src="assets/foto1.jpg" alt="Rafaela - Momento especial">
+            <!-- Botão Foto Aleatória -->
+            <div class="text-center mb-12" data-aos="fade-up" data-aos-delay="200">
+                <button id="random-photo-btn" class="px-8 py-4 rounded-full text-white font-bold text-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105" style="background: linear-gradient(135deg, #E91E63, #9C27B0);">
+                    <i data-lucide="shuffle" class="inline-block w-6 h-6 mr-2"></i>
+                    Foto Aleatória
+                </button>
+            </div>
+            
+            <!-- Carrossel Container -->
+            <div class="relative max-w-5xl mx-auto">
+                <div class="overflow-hidden rounded-3xl">
+                    <div class="photo-carousel flex transition-transform duration-500 ease-out">
+                <div class="overflow-hidden rounded-3xl">
+                    <div class="photo-carousel flex transition-transform duration-500 ease-out">
+                        <!-- Foto 1 -->
+                        <div class="photo-carousel-item min-w-full flex items-center justify-center p-4">
+                            <img src="assets/foto1.jpg" alt="Rafaela - Momento especial" class="max-h-[600px] w-auto rounded-2xl shadow-2xl cursor-pointer hover:scale-105 transition-transform duration-300">
+                        </div>
+                        
+                        <!-- Foto 2 -->
+                        <div class="photo-carousel-item min-w-full flex items-center justify-center p-4">
+                            <img src="assets/foto2.jpg" alt="Rafaela - Sorriso radiante" class="max-h-[600px] w-auto rounded-2xl shadow-2xl cursor-pointer hover:scale-105 transition-transform duration-300">
+                        </div>
+                        
+                        <!-- Foto 3 -->
+                        <div class="photo-carousel-item min-w-full flex items-center justify-center p-4">
+                            <img src="assets/foto3.jpg" alt="Rafaela - Momento inesquecível" class="max-h-[600px] w-auto rounded-2xl shadow-2xl cursor-pointer hover:scale-105 transition-transform duration-300">
+                        </div>
+                        
+                        <!-- Foto 4 -->
+                        <div class="photo-carousel-item min-w-full flex items-center justify-center p-4">
+                            <img src="assets/foto4.png" alt="Rafaela - Alegria contagiante" class="max-h-[600px] w-auto rounded-2xl shadow-2xl cursor-pointer hover:scale-105 transition-transform duration-300">
+                        </div>
+                        
+                        <!-- Foto 5 -->
+                        <div class="photo-carousel-item min-w-full flex items-center justify-center p-4">
+                            <img src="assets/foto5.png" alt="Rafaela - Beleza natural" class="max-h-[600px] w-auto rounded-2xl shadow-2xl cursor-pointer hover:scale-105 transition-transform duration-300">
+                        </div>
+                        
+                        <!-- Foto 6 -->
+                        <div class="photo-carousel-item min-w-full flex items-center justify-center p-4">
+                            <img src="assets/foto6.png" alt="Rafaela - Energia positiva" class="max-h-[600px] w-auto rounded-2xl shadow-2xl cursor-pointer hover:scale-105 transition-transform duration-300">
+                        </div>
+                        
+                        <!-- Foto 7 -->
+                        <div class="photo-carousel-item min-w-full flex items-center justify-center p-4">
+                            <img src="assets/foto7.jpg" alt="Rafaela - Momento único" class="max-h-[600px] w-auto rounded-2xl shadow-2xl cursor-pointer hover:scale-105 transition-transform duration-300">
+                        </div>
+                        
+                        <!-- Foto 8 -->
+                        <div class="photo-carousel-item min-w-full flex items-center justify-center p-4">
+                            <img src="assets/foto8.jpg" alt="Rafaela - Felicidade" class="max-h-[600px] w-auto rounded-2xl shadow-2xl cursor-pointer hover:scale-105 transition-transform duration-300">
+                        </div>
+                        
+                        <!-- Foto 9 -->
+                        <div class="photo-carousel-item min-w-full flex items-center justify-center p-4">
+                            <img src="assets/foto9.jpg" alt="Rafaela - Aventuras" class="max-h-[600px] w-auto rounded-2xl shadow-2xl cursor-pointer hover:scale-105 transition-transform duration-300">
+                        </div>
+                        
+                        <!-- Foto 10 -->
+                        <div class="photo-carousel-item min-w-full flex items-center justify-center p-4">
+                            <img src="assets/foto10.jpg" alt="Rafaela - Espontaneidade" class="max-h-[600px] w-auto rounded-2xl shadow-2xl cursor-pointer hover:scale-105 transition-transform duration-300">
+                        </div>
+                        
+                        <!-- Foto 11 -->
+                        <div class="photo-carousel-item min-w-full flex items-center justify-center p-4">
+                            <img src="assets/foto11.jpg" alt="Rafaela - Sorrisos" class="max-h-[600px] w-auto rounded-2xl shadow-2xl cursor-pointer hover:scale-105 transition-transform duration-300">
+                        </div>
+                        
+                        <!-- Foto 12 -->
+                        <div class="photo-carousel-item min-w-full flex items-center justify-center p-4">
+                            <img src="assets/foto12.png" alt="Rafaela - Celebração" class="max-h-[600px] w-auto rounded-2xl shadow-2xl cursor-pointer hover:scale-105 transition-transform duration-300">
+                        </div>
+                        
+                        <!-- Foto 13 -->
+                        <div class="photo-carousel-item min-w-full flex items-center justify-center p-4">
+                            <img src="assets/foto13.png" alt="Rafaela - Brilho" class="max-h-[600px] w-auto rounded-2xl shadow-2xl cursor-pointer hover:scale-105 transition-transform duration-300">
+                        </div>
+                        
+                        <!-- Foto 14 -->
+                        <div class="photo-carousel-item min-w-full flex items-center justify-center p-4">
+                            <img src="assets/foto14.png" alt="Rafaela - Encanto" class="max-h-[600px] w-auto rounded-2xl shadow-2xl cursor-pointer hover:scale-105 transition-transform duration-300">
+                        </div>
+                        
+                        <!-- Foto 15 -->
+                        <div class="photo-carousel-item min-w-full flex items-center justify-center p-4">
+                            <img src="assets/foto15.jpg" alt="Rafaela - Ternura" class="max-h-[600px] w-auto rounded-2xl shadow-2xl cursor-pointer hover:scale-105 transition-transform duration-300">
+                        </div>
+                        
+                        <!-- Foto 16 -->
+                        <div class="photo-carousel-item min-w-full flex items-center justify-center p-4">
+                            <img src="assets/foto16.jpg" alt="Rafaela - Doçura" class="max-h-[600px] w-auto rounded-2xl shadow-2xl cursor-pointer hover:scale-105 transition-transform duration-300">
+                        </div>
+                        
+                        <!-- Foto 17 -->
+                        <div class="photo-carousel-item min-w-full flex items-center justify-center p-4">
+                            <img src="assets/foto17.jpg" alt="Rafaela - Inspiração" class="max-h-[600px] w-auto rounded-2xl shadow-2xl cursor-pointer hover:scale-105 transition-transform duration-300">
+                        </div>
+                        
+                        <!-- Foto 18 -->
+                        <div class="photo-carousel-item min-w-full flex items-center justify-center p-4">
+                            <img src="assets/foto18.png" alt="Rafaela - Incrível" class="max-h-[600px] w-auto rounded-2xl shadow-2xl cursor-pointer hover:scale-105 transition-transform duration-300">
+                        </div>
+                        
+                        <!-- Foto 19 -->
+                        <div class="photo-carousel-item min-w-full flex items-center justify-center p-4">
+                            <img src="assets/foto19.png" alt="Rafaela - Momento especial" class="max-h-[600px] w-auto rounded-2xl shadow-2xl cursor-pointer hover:scale-105 transition-transform duration-300">
+                        </div>
+                        
+                        <!-- Foto 20 -->
+                        <div class="photo-carousel-item min-w-full flex items-center justify-center p-4">
+                            <img src="assets/foto20.jpeg" alt="Rafaela - Radiante" class="max-h-[600px] w-auto rounded-2xl shadow-2xl cursor-pointer hover:scale-105 transition-transform duration-300">
+                        </div>
+                        
+                        <!-- Foto 21 -->
+                        <div class="photo-carousel-item min-w-full flex items-center justify-center p-4">
+                            <img src="assets/foto21.png" alt="Rafaela - Alegria" class="max-h-[600px] w-auto rounded-2xl shadow-2xl cursor-pointer hover:scale-105 transition-transform duration-300">
+                        </div>
+                        
+                        <!-- Foto 22 -->
+                        <div class="photo-carousel-item min-w-full flex items-center justify-center p-4">
+                            <img src="assets/foto22.png" alt="Rafaela - Espontânea" class="max-h-[600px] w-auto rounded-2xl shadow-2xl cursor-pointer hover:scale-105 transition-transform duration-300">
+                        </div>
+                        
+                        <!-- Foto 23 -->
+                        <div class="photo-carousel-item min-w-full flex items-center justify-center p-4">
+                            <img src="assets/foto23.png" alt="Rafaela - Beleza" class="max-h-[600px] w-auto rounded-2xl shadow-2xl cursor-pointer hover:scale-105 transition-transform duration-300">
+                        </div>
+                        
+                        <!-- Foto 24 -->
+                        <div class="photo-carousel-item min-w-full flex items-center justify-center p-4">
+                            <img src="assets/foto24.png" alt="Rafaela - Graça" class="max-h-[600px] w-auto rounded-2xl shadow-2xl cursor-pointer hover:scale-105 transition-transform duration-300">
+                        </div>
+                        
+                        <!-- Foto 25 -->
+                        <div class="photo-carousel-item min-w-full flex items-center justify-center p-4">
+                            <img src="assets/foto25.png" alt="Rafaela - Luz" class="max-h-[600px] w-auto rounded-2xl shadow-2xl cursor-pointer hover:scale-105 transition-transform duration-300">
+                        </div>
+                        
+                        <!-- Foto 26 -->
+                        <div class="photo-carousel-item min-w-full flex items-center justify-center p-4">
+                            <img src="assets/foto26.png" alt="Rafaela - Encanto" class="max-h-[600px] w-auto rounded-2xl shadow-2xl cursor-pointer hover:scale-105 transition-transform duration-300">
+                        </div>
+                        
+                        <!-- Foto 27 -->
+                        <div class="photo-carousel-item min-w-full flex items-center justify-center p-4">
+                            <img src="assets/foto27.png" alt="Rafaela - Ternura" class="max-h-[600px] w-auto rounded-2xl shadow-2xl cursor-pointer hover:scale-105 transition-transform duration-300">
+                        </div>
+                        
+                        <!-- Foto 28 -->
+                        <div class="photo-carousel-item min-w-full flex items-center justify-center p-4">
+                            <img src="assets/foto28.png" alt="Rafaela - Bênção" class="max-h-[600px] w-auto rounded-2xl shadow-2xl cursor-pointer hover:scale-105 transition-transform duration-300">
+                        </div>
+                        
+                        <!-- Foto 29 -->
+                        <div class="photo-carousel-item min-w-full flex items-center justify-center p-4">
+                            <img src="assets/foto29.jpeg" alt="Rafaela - Maravilhosa" class="max-h-[600px] w-auto rounded-2xl shadow-2xl cursor-pointer hover:scale-105 transition-transform duration-300">
+                        </div>
+                        
+                        <!-- Foto 30 -->
+                        <div class="photo-carousel-item min-w-full flex items-center justify-center p-4">
+                            <img src="assets/foto30.jpeg" alt="Rafaela - Extraordinária" class="max-h-[600px] w-auto rounded-2xl shadow-2xl cursor-pointer hover:scale-105 transition-transform duration-300">
+                        </div>
+                    </div>
                 </div>
-                
-                <!-- Foto 2 -->
-                <div class="photo-item" data-aos="zoom-in" data-aos-delay="200">
-                    <img src="assets/foto2.jpg" alt="Rafaela - Sorriso radiante">
+
+                <!-- Botões de Navegação -->
+                <button class="photo-carousel-prev absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 md:-translate-x-12 bg-white rounded-full p-3 md:p-4 shadow-lg hover:shadow-xl transition-all duration-300 z-10 group" style="border: 2px solid var(--gold);">
+                    <i data-lucide="chevron-left" class="w-6 h-6 md:w-8 md:h-8 group-hover:scale-110 transition-transform" style="color: var(--gold);"></i>
+                </button>
+                <button class="photo-carousel-next absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 md:translate-x-12 bg-white rounded-full p-3 md:p-4 shadow-lg hover:shadow-xl transition-all duration-300 z-10 group" style="border: 2px solid var(--gold);">
+                    <i data-lucide="chevron-right" class="w-6 h-6 md:w-8 md:h-8 group-hover:scale-110 transition-transform" style="color: var(--gold);"></i>
+                </button>
+
+                <!-- Contador de Fotos -->
+                <div class="text-center mt-6">
+                    <p class="text-lg font-semibold" style="color: var(--light-text);">
+                        <span id="photo-counter">1</span> / 30
+                    </p>
                 </div>
-                
-                <!-- Foto 3 -->
-                <div class="photo-item" data-aos="zoom-in" data-aos-delay="300">
-                    <img src="assets/foto3.jpg" alt="Rafaela - Momento inesquecível">
-                </div>
-                
-                <!-- Foto 4 -->
-                <div class="photo-item" data-aos="zoom-in" data-aos-delay="100">
-                    <img src="assets/foto4.png" alt="Rafaela - Alegria contagiante">
-                </div>
-                
-                <!-- Foto 5 -->
-                <div class="photo-item" data-aos="zoom-in" data-aos-delay="200">
-                    <img src="assets/foto5.png" alt="Rafaela - Beleza natural">
-                </div>
-                
-                <!-- Foto 6 -->
-                <div class="photo-item" data-aos="zoom-in" data-aos-delay="300">
-                    <img src="assets/foto6.png" alt="Rafaela - Energia positiva">
-                </div>
-                
-                <!-- Foto 7 -->
-                <div class="photo-item" data-aos="zoom-in" data-aos-delay="100">
-                    <img src="assets/foto7.jpg" alt="Rafaela - Momento único">
-                </div>
-                
-                <!-- Foto 8 -->
-                <div class="photo-item" data-aos="zoom-in" data-aos-delay="200">
-                    <img src="assets/foto8.jpg" alt="Rafaela - Felicidade">
-                </div>
-                
-                <!-- Foto 9 -->
-                <div class="photo-item" data-aos="zoom-in" data-aos-delay="300">
-                    <img src="assets/foto9.jpg" alt="Rafaela - Aventuras">
-                </div>
-                
-                <!-- Foto 10 -->
-                <div class="photo-item" data-aos="zoom-in" data-aos-delay="100">
-                    <img src="assets/foto10.jpg" alt="Rafaela - Espontaneidade">
-                </div>
-                
-                <!-- Foto 11 -->
-                <div class="photo-item" data-aos="zoom-in" data-aos-delay="200">
-                    <img src="assets/foto11.jpg" alt="Rafaela - Sorrisos">
-                </div>
-                
-                <!-- Foto 12 -->
-                <div class="photo-item" data-aos="zoom-in" data-aos-delay="300">
-                    <img src="assets/foto12.png" alt="Rafaela - Celebração">
-                </div>
-                
-                <!-- Foto 13 -->
-                <div class="photo-item" data-aos="zoom-in" data-aos-delay="100">
-                    <img src="assets/foto13.png" alt="Rafaela - Brilho">
-                </div>
-                
-                <!-- Foto 14 -->
-                <div class="photo-item" data-aos="zoom-in" data-aos-delay="200">
-                    <img src="assets/foto14.png" alt="Rafaela - Encanto">
-                </div>
-                
-                <!-- Foto 15 -->
-                <div class="photo-item" data-aos="zoom-in" data-aos-delay="300">
-                    <img src="assets/foto15.jpg" alt="Rafaela - Ternura">
-                </div>
-                
-                <!-- Foto 16 -->
-                <div class="photo-item" data-aos="zoom-in" data-aos-delay="100">
-                    <img src="assets/foto16.jpg" alt="Rafaela - Doçura">
-                </div>
-                
-                <!-- Foto 17 -->
-                <div class="photo-item" data-aos="zoom-in" data-aos-delay="200">
-                    <img src="assets/foto17.jpg" alt="Rafaela - Inspiração">
-                </div>
-                
-                <!-- Foto 18 -->
-                <div class="photo-item" data-aos="zoom-in" data-aos-delay="300">
-                    <img src="assets/foto18.png" alt="Rafaela - Incrível">
-                </div>
-                
-                <!-- Foto 19 -->
-                <div class="photo-item" data-aos="zoom-in" data-aos-delay="100">
-                    <img src="assets/foto19.png" alt="Rafaela - Momento especial">
-                </div>
-                
-                <!-- Foto 20 -->
-                <div class="photo-item" data-aos="zoom-in" data-aos-delay="200">
-                    <img src="assets/foto20.jpeg" alt="Rafaela - Radiante">
-                </div>
-                
-                <!-- Foto 21 -->
-                <div class="photo-item" data-aos="zoom-in" data-aos-delay="300">
-                    <img src="assets/foto21.png" alt="Rafaela - Alegria">
-                </div>
-                
-                <!-- Foto 22 -->
-                <div class="photo-item" data-aos="zoom-in" data-aos-delay="100">
-                    <img src="assets/foto22.png" alt="Rafaela - Espontânea">
-                </div>
-                
-                <!-- Foto 23 -->
-                <div class="photo-item" data-aos="zoom-in" data-aos-delay="200">
-                    <img src="assets/foto23.png" alt="Rafaela - Beleza">
-                </div>
-                
-                <!-- Foto 24 -->
-                <div class="photo-item" data-aos="zoom-in" data-aos-delay="300">
-                    <img src="assets/foto24.png" alt="Rafaela - Graça">
-                </div>
-                
-                <!-- Foto 25 -->
-                <div class="photo-item" data-aos="zoom-in" data-aos-delay="100">
-                    <img src="assets/foto25.png" alt="Rafaela - Luz">
-                </div>
-                
-                <!-- Foto 26 -->
-                <div class="photo-item" data-aos="zoom-in" data-aos-delay="200">
-                    <img src="assets/foto26.png" alt="Rafaela - Encanto">
-                </div>
-                
-                <!-- Foto 27 -->
-                <div class="photo-item" data-aos="zoom-in" data-aos-delay="300">
-                    <img src="assets/foto27.png" alt="Rafaela - Ternura">
-                </div>
-                
-                <!-- Foto 28 -->
-                <div class="photo-item" data-aos="zoom-in" data-aos-delay="100">
-                    <img src="assets/foto28.png" alt="Rafaela - Bênção">
-                </div>
-                
-                <!-- Foto 29 -->
-                <div class="photo-item" data-aos="zoom-in" data-aos-delay="200">
-                    <img src="assets/foto29.jpeg" alt="Rafaela - Maravilhosa">
-                </div>
-                
             </div>
         </div>
     </section>
@@ -1454,24 +1467,65 @@
             }
         });
 
+        // Photo Carousel
+        let currentPhoto = 0;
+        const photoCarousel = document.querySelector('.photo-carousel');
+        const photoCarouselItems = document.querySelectorAll('.photo-carousel-item');
+        const photoCounter = document.getElementById('photo-counter');
+        const photoPrevBtn = document.querySelector('.photo-carousel-prev');
+        const photoNextBtn = document.querySelector('.photo-carousel-next');
+
+        function updatePhotoCarousel() {
+            if (photoCarousel) {
+                photoCarousel.style.transform = `translateX(-${currentPhoto * 100}%)`;
+                if (photoCounter) {
+                    photoCounter.textContent = currentPhoto + 1;
+                }
+                lucide.createIcons();
+            }
+        }
+
+        function nextPhoto() {
+            currentPhoto = (currentPhoto + 1) % photoCarouselItems.length;
+            updatePhotoCarousel();
+        }
+
+        function prevPhoto() {
+            currentPhoto = (currentPhoto - 1 + photoCarouselItems.length) % photoCarouselItems.length;
+            updatePhotoCarousel();
+        }
+
+        if (photoNextBtn) photoNextBtn.addEventListener('click', nextPhoto);
+        if (photoPrevBtn) photoPrevBtn.addEventListener('click', prevPhoto);
+
         // Lightbox Functionality
         const lightbox = document.getElementById('lightbox');
         const lightboxImg = document.getElementById('lightbox-img');
         const lightboxCounter = document.getElementById('lightbox-counter');
-        const photoItems = document.querySelectorAll('.photo-item img');
+        const photoItems = document.querySelectorAll('.photo-carousel-item img');
         let currentImageIndex = 0;
         const images = Array.from(photoItems).map(img => ({
             src: img.src,
             alt: img.alt
         }));
 
-        // Open lightbox
+        // Open lightbox from carousel
         photoItems.forEach((img, index) => {
-            img.parentElement.addEventListener('click', () => {
+            img.addEventListener('click', () => {
                 currentImageIndex = index;
                 openLightbox();
             });
         });
+
+        // Random photo button
+        const randomPhotoBtn = document.getElementById('random-photo-btn');
+        if (randomPhotoBtn) {
+            randomPhotoBtn.addEventListener('click', () => {
+                const randomIndex = Math.floor(Math.random() * images.length);
+                currentImageIndex = randomIndex;
+                openLightbox();
+            });
+        }
 
         function openLightbox() {
             lightbox.classList.add('active');
