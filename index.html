@@ -171,6 +171,7 @@
             border-radius: 8px;
             box-shadow: 0 0 50px rgba(201, 168, 119, 0.5);
             object-fit: contain;
+            transition: opacity 0.3s ease;
         }
         
         .lightbox-close {
@@ -847,6 +848,56 @@
                         <div class="photo-carousel-item min-w-full flex items-center justify-center p-4">
                             <img src="assets/foto34.png" alt="Rafaela - Espetacular" class="max-h-[600px] w-auto rounded-2xl shadow-2xl cursor-pointer hover:scale-105 transition-transform duration-300">
                         </div>
+                        
+                        <!-- Foto 35 -->
+                        <div class="photo-carousel-item min-w-full flex items-center justify-center p-4">
+                            <img src="assets/foto35.jpeg" alt="Rafaela - Radiante" class="max-h-[600px] w-auto rounded-2xl shadow-2xl cursor-pointer hover:scale-105 transition-transform duration-300">
+                        </div>
+                        
+                        <!-- Foto 36 -->
+                        <div class="photo-carousel-item min-w-full flex items-center justify-center p-4">
+                            <img src="assets/foto36.jpeg" alt="Rafaela - Deslumbrante" class="max-h-[600px] w-auto rounded-2xl shadow-2xl cursor-pointer hover:scale-105 transition-transform duration-300">
+                        </div>
+                        
+                        <!-- Foto 37 -->
+                        <div class="photo-carousel-item min-w-full flex items-center justify-center p-4">
+                            <img src="assets/foto37.jpeg" alt="Rafaela - Maravilhosa" class="max-h-[600px] w-auto rounded-2xl shadow-2xl cursor-pointer hover:scale-105 transition-transform duration-300">
+                        </div>
+                        
+                        <!-- Foto 38 -->
+                        <div class="photo-carousel-item min-w-full flex items-center justify-center p-4">
+                            <img src="assets/foto38.jpeg" alt="Rafaela - Excepcional" class="max-h-[600px] w-auto rounded-2xl shadow-2xl cursor-pointer hover:scale-105 transition-transform duration-300">
+                        </div>
+                        
+                        <!-- Foto 39 -->
+                        <div class="photo-carousel-item min-w-full flex items-center justify-center p-4">
+                            <img src="assets/foto39.jpeg" alt="Rafaela - Formidável" class="max-h-[600px] w-auto rounded-2xl shadow-2xl cursor-pointer hover:scale-105 transition-transform duration-300">
+                        </div>
+                        
+                        <!-- Foto 40 -->
+                        <div class="photo-carousel-item min-w-full flex items-center justify-center p-4">
+                            <img src="assets/foto40.jpeg" alt="Rafaela - Sublime" class="max-h-[600px] w-auto rounded-2xl shadow-2xl cursor-pointer hover:scale-105 transition-transform duration-300">
+                        </div>
+                        
+                        <!-- Foto 41 -->
+                        <div class="photo-carousel-item min-w-full flex items-center justify-center p-4">
+                            <img src="assets/foto41.jpeg" alt="Rafaela - Magnífica" class="max-h-[600px] w-auto rounded-2xl shadow-2xl cursor-pointer hover:scale-105 transition-transform duration-300">
+                        </div>
+                        
+                        <!-- Foto 42 -->
+                        <div class="photo-carousel-item min-w-full flex items-center justify-center p-4">
+                            <img src="assets/foto42.jpeg" alt="Rafaela - Esplêndida" class="max-h-[600px] w-auto rounded-2xl shadow-2xl cursor-pointer hover:scale-105 transition-transform duration-300">
+                        </div>
+                        
+                        <!-- Foto 43 -->
+                        <div class="photo-carousel-item min-w-full flex items-center justify-center p-4">
+                            <img src="assets/foto43.jpeg" alt="Rafaela - Fantástica" class="max-h-[600px] w-auto rounded-2xl shadow-2xl cursor-pointer hover:scale-105 transition-transform duration-300">
+                        </div>
+                        
+                        <!-- Foto 44 -->
+                        <div class="photo-carousel-item min-w-full flex items-center justify-center p-4">
+                            <img src="assets/foto44.jpeg" alt="Rafaela - Prodigiosa" class="max-h-[600px] w-auto rounded-2xl shadow-2xl cursor-pointer hover:scale-105 transition-transform duration-300">
+                        </div>
                     </div>
                 </div>
 
@@ -861,7 +912,7 @@
                 <!-- Contador de Fotos -->
                 <div class="text-center mt-6">
                     <p class="text-lg font-semibold" style="color: var(--light-text);">
-                        <span id="photo-counter">1</span> / 34
+                        <span id="photo-counter">1</span> / 44
                     </p>
                 </div>
             </div>
@@ -1564,9 +1615,24 @@
         }
 
         function updateLightboxImage() {
-            lightboxImg.src = images[currentImageIndex].src;
-            lightboxImg.alt = images[currentImageIndex].alt;
-            lightboxCounter.textContent = `${currentImageIndex + 1} / ${images.length}`;
+            if (images[currentImageIndex]) {
+                const newSrc = images[currentImageIndex].src;
+                const newAlt = images[currentImageIndex].alt;
+                
+                // Ensure image loads properly
+                lightboxImg.style.opacity = '0';
+                lightboxImg.onload = function() {
+                    lightboxImg.style.opacity = '1';
+                };
+                lightboxImg.onerror = function() {
+                    console.error('Error loading image:', newSrc);
+                    lightboxImg.style.opacity = '1';
+                };
+                
+                lightboxImg.src = newSrc;
+                lightboxImg.alt = newAlt;
+                lightboxCounter.textContent = `${currentImageIndex + 1} / ${images.length}`;
+            }
         }
 
         function nextImage() {
