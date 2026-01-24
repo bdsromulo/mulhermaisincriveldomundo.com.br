@@ -677,8 +677,6 @@
             <div class="relative max-w-5xl mx-auto">
                 <div class="overflow-hidden rounded-3xl">
                     <div class="photo-carousel flex transition-transform duration-500 ease-out">
-                <div class="overflow-hidden rounded-3xl">
-                    <div class="photo-carousel flex transition-transform duration-500 ease-out">
                         <!-- Foto 1 -->
                         <div class="photo-carousel-item min-w-full flex items-center justify-center p-4">
                             <img src="assets/foto1.jpg" alt="Rafaela - Momento especial" class="max-h-[600px] w-auto rounded-2xl shadow-2xl cursor-pointer hover:scale-105 transition-transform duration-300">
@@ -901,7 +899,7 @@
                     </div>
                 </div>
 
-                <!-- Botões de Navegação -->
+                <!-- Botões de Navegação (fora do overflow) -->
                 <button class="photo-carousel-prev absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 md:-translate-x-12 bg-white rounded-full p-3 md:p-4 shadow-lg hover:shadow-xl transition-all duration-300 z-10 group" style="border: 2px solid var(--gold);">
                     <i data-lucide="chevron-left" class="w-6 h-6 md:w-8 md:h-8 group-hover:scale-110 transition-transform" style="color: var(--gold);"></i>
                 </button>
@@ -1135,6 +1133,28 @@
                                 </p>
                             </div>
                         </div>
+
+                        <!-- Depoimento 10 - Joyce -->
+                        <div class="testimonial-item min-w-full px-4">
+                            <div class="bg-white rounded-2xl p-8 md:p-12 shadow-xl mx-auto max-w-3xl">
+                                <div class="mb-8">
+                                    <div class="flex items-center gap-4 mb-6">
+                                        <div class="w-20 h-20 rounded-full flex items-center justify-center" style="background-color: var(--dark-cream);">
+                                            <i data-lucide="heart" class="w-10 h-10" style="color: #E91E63;"></i>
+                                        </div>
+                                        <div>
+                                            <h3 class="text-2xl font-bold" style="font-family: 'Playfair Display', serif; color: var(--dark-text);">
+                                                Joyce
+                                            </h3>
+                                            <p class="text-base" style="color: var(--gold);">Prima</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <p class="text-lg md:text-xl leading-relaxed text-center" style="color: var(--light-text);">
+                                    Não sei o que é viver sem ter a Rafa por perto, ela é a doçura da família, a personalidade, a risada e o carinho, tudo com ela é muito mais especial!
+                                </p>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
@@ -1149,6 +1169,7 @@
                 <!-- Indicadores (Dots) -->
                 <div class="flex justify-center gap-2 mt-8">
                     <button class="carousel-dot w-3 h-3 rounded-full transition-all duration-300" style="background-color: var(--gold); opacity: 1; transform: scale(1.2);"></button>
+                    <button class="carousel-dot w-3 h-3 rounded-full transition-all duration-300" style="background-color: var(--gold); opacity: 0.3;"></button>
                     <button class="carousel-dot w-3 h-3 rounded-full transition-all duration-300" style="background-color: var(--gold); opacity: 0.3;"></button>
                     <button class="carousel-dot w-3 h-3 rounded-full transition-all duration-300" style="background-color: var(--gold); opacity: 0.3;"></button>
                     <button class="carousel-dot w-3 h-3 rounded-full transition-all duration-300" style="background-color: var(--gold); opacity: 0.3;"></button>
